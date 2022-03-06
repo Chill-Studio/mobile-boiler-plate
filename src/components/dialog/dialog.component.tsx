@@ -1,5 +1,5 @@
-import React from "react";
 import { Button, AlertDialog, Text } from "native-base";
+import { useRef } from "react";
 export function Dialog(p: {
   isOpen: boolean;
   title: string;
@@ -11,7 +11,7 @@ export function Dialog(p: {
   isBtnDisabled?: boolean;
   closeOnOverlayClick?: boolean;
 }) {
-  const cancelRef = React.useRef(null);
+  const cancelRef = useRef(null);
   return (
     <AlertDialog
       leastDestructiveRef={cancelRef}

@@ -1,4 +1,3 @@
-import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { NativeRouter, Routes, Route } from "react-router-native";
 import { RecoilRoot } from "recoil";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Pressable } from "native-base";
 
 export const CustomPressable = (p: {

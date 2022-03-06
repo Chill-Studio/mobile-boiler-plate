@@ -1,18 +1,15 @@
-import React from "react";
 import { Box } from "native-base";
-import { TransitionFade } from "../transition-fade";
+import { TransitionFade } from "@components";
 import { ColorType } from "native-base/lib/typescript/components/types";
-export function ContainerPage(p: {
-  children: React.ReactNode;
-  bg?: ColorType;
-}) {
+import { ReactNode } from "react";
+export function ContainerPage(p: { children: ReactNode; bg?: ColorType }) {
   return (
     <TransitionFade>
       <Box
         bg={
           p.bg || {
             linearGradient: {
-              colors: ["teal.500", "primary.100"] as ColorType[],
+              colors: ["teal.500", "primary.100"],
               start: [0, 0],
               end: [1, 1],
             },

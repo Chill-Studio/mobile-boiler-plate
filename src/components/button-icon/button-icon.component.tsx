@@ -1,4 +1,3 @@
-import React from "react";
 import { IconButton } from "native-base";
 import { ColorType } from "native-base/lib/typescript/components/types";
 export const ButtonIcon = (p: {

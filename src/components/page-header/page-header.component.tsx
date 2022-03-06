@@ -1,6 +1,6 @@
 import React from "react";
-import { ButtonBack } from "../button-back";
-import { HStack, Box, Flex, Heading } from "native-base";
+import { ButtonBack } from "@components";
+import { HStack, Box, Heading } from "native-base";
 import { ColorType } from "native-base/lib/typescript/components/types";
 
 export function Header(p: {

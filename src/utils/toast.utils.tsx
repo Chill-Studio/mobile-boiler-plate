@@ -1,5 +1,4 @@
 import { HStack, useToast, Text, Icon, Box } from "native-base";
-import React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 export function useAlert() {
