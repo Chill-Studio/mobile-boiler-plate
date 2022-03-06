@@ -20,6 +20,7 @@ export function ContainerPage(p: {
         }
         safeArea
         h="100%"
+        p={5}
       >
         {p.children}
       </Box>

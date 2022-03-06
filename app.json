@@ -1,8 +1,8 @@
 {
   "expo": {
     
-    "name": "mobile-boiler-plate",
-    "slug": "mobile-boiler-plate",
+    "name": "chill-bill",
+    "slug": "chill-bill",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -30,7 +30,7 @@
       "favicon": "./src/assets/favicon.png"
     },
     "plugins": [
-  
+     
     ]
   }
   

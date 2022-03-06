@@ -1,9 +1,18 @@
-# NativeBase TypeScript Expo Template
+# Mobile boiler plate
 
-The official NativeBase TypeScript template for [Expo](https://docs.expo.io/)
+## Automatic export in index.ts
 
-## Usage
+### Rollup exports in an index.ts
 
-```sh
-expo init my-app --template @native-base/expo-template-typescript
+1. In scripts/rollup-files.js add the files you want to exports automatically in generateAutoExports
+
+### Allow the import by an alias
+
+1. Make sure you have added an alias in tsconfig.paths.json
+
+## Generate code
+
+```shell
+yarn run g <component|page> <MyComponentName|MyPageName>
 ```
+You can add templates src/script/code-generation/templates

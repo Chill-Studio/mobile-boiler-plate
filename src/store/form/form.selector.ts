@@ -1,5 +1,5 @@
 import { selector } from "recoil";
-import { toKebabCase } from "../utils/string.utils";
+import { toKebabCase } from "../../utils/string.utils";
 import { formSlice } from "./form.slice";
 
 export const formSelector = selector({
