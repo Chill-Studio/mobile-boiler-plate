@@ -28,8 +28,10 @@ generateCode(name, type);
 async function generateCode(name, type) {
   const files = await getFiles("./scripts/code-generation/templates");
   const allowedTypes = files.map((f) => {
-    const splitedOnSlash = f.split("/");
+    const splitedOnSlash = f.split(process.platform === "win32" ? "\\" : "/")
+
     const fileName = splitedOnSlash[splitedOnSlash.length - 1];
+
     const templateType = fileName.split("-")[0];
     return templateType;
   });
@@ -44,8 +46,8 @@ async function generateCode(name, type) {
   if (!isAllowedType) {
     console.log(
       "Wrong type parameter, usage : yarn run g <" +
-        allowedTypes.join("|") +
-        "> <MyComponentName>"
+      allowedTypes.join("|") +
+      "> <MyComponentName>"
     );
     exit(-1);
   }

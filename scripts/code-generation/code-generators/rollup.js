@@ -9,7 +9,8 @@ async function rollup(path, fileNameList) {
   // Run through all files of the given path
   files.forEach((file) => {
     // Split each part of the path
-    const pathSplited = file.split("/");
+    const pathSplited = file.split(process.platform === "win32" ? "\\" : "/");
+
     // Get the file name
     const fileName = pathSplited[pathSplited.length - 1];
     // Get the folder the file is in

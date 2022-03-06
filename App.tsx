@@ -1,10 +1,11 @@
 import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { NativeRouter, Routes, Route } from "react-router-native";
-import { ROUTES } from "routes";
-import { HomePage } from "pages";
 import { RecoilRoot } from "recoil";
-
+import { ROUTES } from "@routes";
+import { HomePage } from "@pages";
+import { themeConfig } from "@theme";
+import { config } from "@configs";
 // extend the theme
 export const theme = extendTheme({
   useSystemColorMode: false,
@@ -17,8 +18,7 @@ declare module "native-base" {
   interface ICustomTheme extends MyThemeType {}
 }
 import { LogBox } from "react-native";
-import { themeConfig } from "theme";
-import { config } from "config";
+
 config.hideYellowLogs && LogBox.ignoreAllLogs();
 
 export default function App() {

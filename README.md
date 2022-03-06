@@ -16,3 +16,5 @@
 yarn run g <component|page> <MyComponentName|MyPageName>
 ```
 You can add templates src/script/code-generation/templates
+
+## Troubleshouting

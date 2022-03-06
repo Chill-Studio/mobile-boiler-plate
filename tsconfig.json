@@ -1,23 +1,57 @@
 {
-  "extends": "expo/tsconfig.base",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Expo",
   "compilerOptions": {
-    "jsx": "react",
-    "baseUrl": "./",
-    "strict": true,
+    "baseUrl": ".",
     "paths": {
-      "assets/*": ["./src/assets/*"],
-      "pages": ["./src/pages/index.ts"],
-      "components": ["./src/components/index.ts"],
-      "routes": ["./src/routes/index.ts"],
-      "store": ["./src/store/index.ts"],
-      "config": ["src/configs/index.ts"],
-      "utils": ["./src/utils/index.ts"],
-      "theme": ["./src/theme/index.ts"]
-
-    }
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@pages": [
+        "./src/pages/index.ts"
+      ],
+      "@components": [
+        "./src/components/index.ts"
+      ],
+      "@routes": [
+        "./src/routes/index.ts"
+      ],
+      "@store": [
+        "./src/store/index.ts"
+      ],
+      "@configs": [
+        "src/configs/index.ts"
+      ],
+      "@utils": [
+        "./src/utils/index.ts"
+      ],
+      "@theme": [
+        "./src/theme/index.ts"
+      ]
+    },
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "strict": true
   },
   "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./**/*.ts",
+    "./**/*.tsx"
   ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
+  "extends": "expo/tsconfig.base"
 }

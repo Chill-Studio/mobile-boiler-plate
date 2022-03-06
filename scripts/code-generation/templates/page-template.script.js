@@ -2,10 +2,11 @@ const { toPascalCase } = require("../../utils.script");
 
 module.exports = (name) => {
   const namePascal = toPascalCase(name);
-  return `/* 
+  return `import React from "react";
+  /*
   ${namePascal} is a component that 
 */
 export function ${namePascal}  () {
-  return <></>;
+  return <ContainerPage></ContainerPage>;
 }`;
 };
