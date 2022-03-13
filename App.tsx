@@ -1,3 +1,4 @@
+import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { NativeRouter, Routes, Route } from "react-router-native";
 import { RecoilRoot } from "recoil";
@@ -5,6 +6,9 @@ import { ROUTES } from "@routes";
 import { HomePage } from "@pages";
 import { themeConfig } from "@theme";
 import { config } from "@configs";
+import { i18n } from "./i18n.utils";
+import { I18nextProvider } from "react-i18next";
+
 // extend the theme
 export const theme = extendTheme({
   useSystemColorMode: false,
@@ -20,16 +24,20 @@ import { LogBox } from "react-native";
 
 config.hideYellowLogs && LogBox.ignoreAllLogs();
 
+LogBox.ignoreLogs(["Rrequire cycle:"]);
+
 export default function App() {
   return (
     <RecoilRoot>
-      <NativeBaseProvider config={themeConfig}>
-        <NativeRouter>
-          <Routes>
-            <Route path={ROUTES.HOME} element={<HomePage />} />
-          </Routes>
-        </NativeRouter>
-      </NativeBaseProvider>
+      <I18nextProvider i18n={i18n}>
+        <NativeBaseProvider config={themeConfig}>
+          <NativeRouter>
+            <Routes>
+              <Route path={ROUTES.HOME} element={<HomePage />} />
+            </Routes>
+          </NativeRouter>
+        </NativeBaseProvider>
+      </I18nextProvider>
     </RecoilRoot>
   );
 }

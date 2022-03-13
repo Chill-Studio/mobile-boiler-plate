@@ -22,6 +22,7 @@ async function rollup(path, fileNameList) {
       // Like ./src/components
       let isFolderFileNameList =
         fileNameList.findIndex((v) => folderName.includes(v)) > -1;
+
       // Store in variable if the current file is included in the fileNameList
       let isFileNameIncludedInFileNameList =
         fileNameList.findIndex((v) => fileName.includes(v)) > -1;
@@ -29,10 +30,10 @@ async function rollup(path, fileNameList) {
       const splitedFileName = fileName.split(".");
       splitedFileName.pop();
       const fileNameWithoutExtension = splitedFileName.join(".");
-      if (isFileNameIncludedInFileNameList) {
-        pathToWrite = `export * from "./${folderName}/${fileNameWithoutExtension}"`;
-      } else if (isFolderFileNameList) {
+      if (isFolderFileNameList) {
         pathToWrite = `export * from "./${fileNameWithoutExtension}"`;
+      } else if (isFileNameIncludedInFileNameList) {
+        pathToWrite = `export * from "./${folderName}/${fileNameWithoutExtension}"`;
       }
       rollupPaths.push(pathToWrite);
     }

@@ -1,7 +1,7 @@
+import React, { ReactNode } from "react";
 import { Box } from "native-base";
 import { TransitionFade } from "@components";
 import { ColorType } from "native-base/lib/typescript/components/types";
-import { ReactNode } from "react";
 export function ContainerPage(p: { children: ReactNode; bg?: ColorType }) {
   return (
     <TransitionFade>

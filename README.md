@@ -17,4 +17,14 @@ yarn run g <component|page> <MyComponentName|MyPageName>
 ```
 You can add templates src/script/code-generation/templates
 
-## Troubleshouting
+## I18N
+
+1. Add a local translation file
+
+Suffix the name of you objet with `_<lng>`
+
+```
+export const common_en = {
+    "title": "Hello"
+}
+```

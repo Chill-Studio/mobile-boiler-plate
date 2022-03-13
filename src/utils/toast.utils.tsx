@@ -1,3 +1,4 @@
+import React from "react";
 import { HStack, useToast, Text, Icon, Box } from "native-base";
 import { FontAwesome5 } from "@expo/vector-icons";
 

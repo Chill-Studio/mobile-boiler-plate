@@ -1,5 +1,5 @@
 import { Button, AlertDialog, Text } from "native-base";
-import { useRef } from "react";
+import React, { useRef } from "react";
 export function Dialog(p: {
   isOpen: boolean;
   title: string;
