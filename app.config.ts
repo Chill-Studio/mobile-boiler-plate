@@ -1,23 +1,22 @@
 import { ExpoConfig, ConfigContext } from "@expo/config";
 
-export const config: EnvConfiguration = {
-  supportedLanguages: ["en", "fr"]
-}
+export const allEnvConfig: EnvConfiguration = {
+  supportedLanguages: ["en", "fr"],
+};
 
 export const devConfig: EnvConfiguration = {
-  ...config,
+  ...allEnvConfig,
   hideYellowLogs: true,
 };
 
 export const prodConfig: EnvConfiguration = {
-  ...config,
+  ...allEnvConfig,
   hideYellowLogs: true,
 };
 
-
 export interface EnvConfiguration {
   hideYellowLogs?: boolean;
-  supportedLanguages: string[]
+  supportedLanguages: string[];
 }
 
 export default ({ config }: ConfigContext): ExpoConfig => {
