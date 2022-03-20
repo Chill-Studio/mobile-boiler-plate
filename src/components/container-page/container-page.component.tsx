@@ -2,7 +2,11 @@ import React, { ReactNode } from "react";
 import { Box } from "native-base";
 import { TransitionFade } from "@components";
 import { ColorType } from "native-base/lib/typescript/components/types";
-export function ContainerPage(p: { children: ReactNode; bg?: ColorType }) {
+export function ContainerPage(p: {
+  children: ReactNode;
+  bg?: ColorType;
+  h?: string | number;
+}) {
   return (
     <TransitionFade>
       <Box
@@ -16,8 +20,8 @@ export function ContainerPage(p: { children: ReactNode; bg?: ColorType }) {
           }
         }
         safeArea
-        h="100%"
         p={5}
+        h={p.h}
       >
         {p.children}
       </Box>

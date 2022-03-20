@@ -16,8 +16,8 @@
       "@routes": [
         "./src/routes/index.ts"
       ],
-      "@store": [
-        "./src/store/index.ts"
+      "@store/*": [
+        "./src/store/*"
       ],
       "@configs": [
         "src/configs/index.ts"

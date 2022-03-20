@@ -28,3 +28,11 @@ export const common_en = {
     "title": "Hello"
 }
 ```
+
+## Dev tool
+
+Add your slice name to in App.js 
+
+```js
+  useAtomDevtools(projectAtom, "project");
+```
