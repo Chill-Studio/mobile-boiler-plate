@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { NativeBaseProvider, extendTheme } from "native-base";
+import { NativeBaseProvider, extendTheme, Text } from "native-base";
 import { NativeRouter, Routes, Route } from "react-router-native";
 import { ROUTES } from "@routes";
 import { HomePage } from "@pages";
@@ -21,7 +21,6 @@ declare module "native-base" {
   interface ICustomTheme extends MyThemeType {}
 }
 import { LogBox } from "react-native";
-import { projectAtom } from "@store/welcome";
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 
@@ -40,7 +39,7 @@ const AppContent = () => (
 );
 export default function App() {
   return process.env.NODE_ENV !== "production" ? (
-    <AtomsDevtoolProvider>{<AppContent />}</AtomsDevtoolProvider>
+    <AppContent />
   ) : (
     <AppContent />
   );
@@ -54,6 +53,6 @@ export const AtomsDevtoolProvider = ({
   /**
    * Add here the atoms you want to track in the devtool
    */
-  useAtomDevtools(projectAtom, "project");
+  // useAtomDevtools(projectAtom, "project");
   return children;
 };
