@@ -12,7 +12,8 @@
   "license": "UNLICENDED",
   "scripts": {
     "setup": "node ./scripts/setup.js",
-    "start": "yarn setup && expo start",
+    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19000'",
+    "start": "yarn debug && yarn setup && expo start",
     "android": "yarn setup && expo start --android",
     "ios": "yarn setup && expo start --ios",
     "web": "yarn setup && expo start --web",
@@ -43,11 +44,12 @@
     "react-router-native": "^6.2.1",
     "use-async-effect": "^2.2.5",
     "write": "^2.0.0"
-    },
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "typescript": "^4.5.5"
   },
   "author": "Robin Lebhar",

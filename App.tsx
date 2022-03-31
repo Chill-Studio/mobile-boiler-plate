@@ -8,6 +8,8 @@ import { config } from "@configs";
 import { i18n } from "./i18n.utils";
 import { I18nextProvider } from "react-i18next";
 import { useAtomDevtools } from "jotai/devtools";
+import { LogBox } from "react-native";
+import { projectAtom } from "@store";
 
 // extend the theme
 export const theme = extendTheme({
@@ -20,11 +22,9 @@ type MyThemeType = typeof theme;
 declare module "native-base" {
   interface ICustomTheme extends MyThemeType {}
 }
-import { LogBox } from "react-native";
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
-
-// LogBox.ignoreLogs(["Rrequire cycle:"]);
+//LogBox.ignoreLogs(["Require cycle:"]);
 
 const AppContent = () => (
   <I18nextProvider i18n={i18n}>
@@ -39,7 +39,9 @@ const AppContent = () => (
 );
 export default function App() {
   return process.env.NODE_ENV !== "production" ? (
-    <AppContent />
+    <AtomsDevtoolProvider>
+      <AppContent />
+    </AtomsDevtoolProvider>
   ) : (
     <AppContent />
   );
@@ -53,6 +55,6 @@ export const AtomsDevtoolProvider = ({
   /**
    * Add here the atoms you want to track in the devtool
    */
-  // useAtomDevtools(projectAtom, "project");
+  useAtomDevtools(projectAtom, "project");
   return children;
 };

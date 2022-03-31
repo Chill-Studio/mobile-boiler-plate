@@ -1,19 +1,25 @@
+const tsconfig = require("./tsconfig.json");
+
 module.exports = function (api) {
   api.cache(true);
+
   return {
     presets: ["babel-preset-expo"],
     plugins: [
       [
         "module-resolver",
         {
+          root: ["./"],
+          extensions: [".ios.js", ".android.js", ".js", ".ts", ".tsx", ".json"],
           alias: {
-            "@assets/*": "./src/assets/*",
-            "@pages": "./src/pages/index.ts",
-            "@components": "./src/components/index.ts",
-            "@routes": "./src/routes/index.ts",
-            "@configs": "./src/configs/index.ts",
-            "@utils": "./src/utils/index.ts",
-            "@theme": "./src/theme/index.ts",
+            "@assets": "./src/assets",
+            "@pages": "./src/pages",
+            "@components": "./src/components",
+            "@routes": "./src/routes",
+            "@configs": "./src/configs",
+            "@utils": "./src/utils",
+            "@theme": "./src/theme",
+            "@store": "./src/store",
           },
         },
       ],
