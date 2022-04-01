@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
-import { NativeBaseProvider, extendTheme, Text } from "native-base";
+import { NativeBaseProvider } from "native-base";
 import { NativeRouter, Routes, Route } from "react-router-native";
 import { ROUTES } from "@routes";
 import { HomePage } from "@pages";
-import { themeConfig } from "@theme";
+import { theme } from "@theme";
 import { config } from "@configs";
 import { i18n } from "./i18n.utils";
 import { I18nextProvider } from "react-i18next";
@@ -11,24 +11,11 @@ import { useAtomDevtools } from "jotai/devtools";
 import { LogBox } from "react-native";
 import { projectAtom } from "@store";
 
-// extend the theme
-export const theme = extendTheme({
-  useSystemColorMode: false,
-  initialColorMode: "dark",
-});
-
-type MyThemeType = typeof theme;
-
-declare module "native-base" {
-  interface ICustomTheme extends MyThemeType {}
-}
-
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 //LogBox.ignoreLogs(["Require cycle:"]);
-
 const AppContent = () => (
   <I18nextProvider i18n={i18n}>
-    <NativeBaseProvider config={themeConfig}>
+    <NativeBaseProvider config={theme}>
       <NativeRouter>
         <Routes>
           <Route path={ROUTES.HOME} element={<HomePage />} />
@@ -38,13 +25,9 @@ const AppContent = () => (
   </I18nextProvider>
 );
 export default function App() {
-  return process.env.NODE_ENV !== "production" ? (
-    <AtomsDevtoolProvider>
-      <AppContent />
-    </AtomsDevtoolProvider>
-  ) : (
+  <AtomsDevtoolProvider>
     <AppContent />
-  );
+  </AtomsDevtoolProvider>;
 }
 
 export const AtomsDevtoolProvider = ({
@@ -55,6 +38,8 @@ export const AtomsDevtoolProvider = ({
   /**
    * Add here the atoms you want to track in the devtool
    */
-  useAtomDevtools(projectAtom, "project");
+  process.env.NODE_ENV !== "production" &&
+    useAtomDevtools(projectAtom, "project");
+
   return children;
 };
