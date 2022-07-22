@@ -8,7 +8,7 @@ export const devConfig: EnvConfiguration = {
   ...allEnvConfig,
   hideYellowLogs: true,
   debugStore: {
-    post: true,
+    post: false,
   },
 };
 
