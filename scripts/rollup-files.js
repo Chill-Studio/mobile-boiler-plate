@@ -5,8 +5,10 @@ function generateAutoExports() {
   return Promise.all([
     rollup("./src/components", ["component"]),
     rollup("./src/pages", ["page"]),
+    rollup("./src/hooks", ["hook"]),
     rollup("./src/utils", ["utils"]),
-    rollup("./src/store", ["slice", "selector", "atom"]),
+    rollup("./src/store", ["store"]),
+    rollup("./src/typings", ["typing"]),
   ]);
 }
 

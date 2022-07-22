@@ -1,5 +1,26 @@
 # Mobile boiler plate
 
+## Getting started
+
+### Start
+
+```shell
+yarn && yarn dev
+```
+
+### Debug
+(mac only)
+```shell
+yarn debug
+``` 
+
+## Config
+
+app.config.ts for config and typing
+
+import from "@config"
+
+
 ## Automatic export in index.ts
 
 ### Rollup exports in an index.ts

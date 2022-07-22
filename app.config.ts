@@ -7,6 +7,9 @@ export const allEnvConfig: EnvConfiguration = {
 export const devConfig: EnvConfiguration = {
   ...allEnvConfig,
   hideYellowLogs: true,
+  debugStore: {
+    post: true,
+  },
 };
 
 export const prodConfig: EnvConfiguration = {
@@ -17,6 +20,9 @@ export const prodConfig: EnvConfiguration = {
 export interface EnvConfiguration {
   hideYellowLogs?: boolean;
   supportedLanguages: string[];
+  debugStore?: {
+    post: boolean;
+  };
 }
 
 export default ({ config }: ConfigContext): ExpoConfig => {

@@ -11,6 +11,7 @@
       "@configs": ["configs/index.ts"],
       "@utils": ["utils/index.ts"],
       "@theme": ["theme/index.ts"],
+      "@typings": ["typings/index.ts"],
       "@store": ["store/index.ts"]
     },
     "allowJs": true,

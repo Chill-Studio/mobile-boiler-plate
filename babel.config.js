@@ -8,7 +8,7 @@ module.exports = function (api) {
       [
         "module-resolver",
         {
-          root: ["./"],
+          root: ["."],
           extensions: [".ios.js", ".android.js", ".js", ".ts", ".tsx", ".json"],
           alias: {
             '@assets/*': './src/assets/*',
@@ -18,7 +18,8 @@ module.exports = function (api) {
             '@store': './src/store/index.ts',
             '@configs': './src/configs/index.ts',
             '@utils': './src/utils/index.ts',
-            '@theme': './src/theme/index.ts'
+            '@theme': './src/theme/index.ts',
+            '@typings': './src/typings/index.ts'
 
           },
         },

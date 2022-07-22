@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { locale } from "expo-localization";
 import i18nextHttpBackend from "i18next-http-backend";
-import { config } from "@configs";
+import { config } from "./src/configs";
 const localesRessources = require(`./src/locales/index.ts`);
 
 function getRessourcesFromLocalFolder() {

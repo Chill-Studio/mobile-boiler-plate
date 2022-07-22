@@ -1,6 +1,6 @@
 {
   "expo": {
-    "plugins":["expo-community-flipper"],
+    "plugins":[],
     "name": "mobile-boiler-plate",
     "slug": "mobile-boiler-plate",
     "version": "1.0.0",
