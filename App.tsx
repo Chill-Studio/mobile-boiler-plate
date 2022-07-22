@@ -9,6 +9,7 @@ import { I18nextProvider } from "react-i18next";
 import { LogBox } from "react-native";
 import Constants from "expo-constants";
 import { EnvConfiguration } from "./app.config";
+import { SandboxPage } from "./src/pages/sandbox/sandbox.page";
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 //LogBox.ignoreLogs(["Require cycle:"]);
@@ -19,7 +20,10 @@ const App = () => (
     <NativeBaseProvider config={theme}>
       <NativeRouter>
         <Routes>
-          <Route path={ROUTES.HOME} element={<HomePage />} />
+          <Route
+            path={ROUTES.HOME}
+            element={config.sandboxMode ? <SandboxPage /> : <HomePage />}
+          />
         </Routes>
       </NativeRouter>
     </NativeBaseProvider>

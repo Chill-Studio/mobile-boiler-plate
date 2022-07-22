@@ -6,7 +6,8 @@ export const allEnvConfig: EnvConfiguration = {
 
 export const devConfig: EnvConfiguration = {
   ...allEnvConfig,
-  hideYellowLogs: true,
+  hideYellowLogs: false,
+  sandboxMode: true,
   debugStore: {
     post: false,
   },
@@ -20,6 +21,7 @@ export const prodConfig: EnvConfiguration = {
 export interface EnvConfiguration {
   hideYellowLogs?: boolean;
   supportedLanguages: string[];
+  sandboxMode?: boolean;
   debugStore?: {
     post: boolean;
   };
