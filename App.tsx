@@ -13,6 +13,8 @@ import { projectAtom } from "@store";
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 //LogBox.ignoreLogs(["Require cycle:"]);
+LogBox.ignoreLogs(["Require cycle:"]);
+
 const AppContent = () => (
   <I18nextProvider i18n={i18n}>
     <NativeBaseProvider config={theme}>
@@ -25,9 +27,11 @@ const AppContent = () => (
   </I18nextProvider>
 );
 export default function App() {
-  <AtomsDevtoolProvider>
-    <AppContent />
-  </AtomsDevtoolProvider>;
+  return (
+    <AtomsDevtoolProvider>
+      <AppContent />
+    </AtomsDevtoolProvider>
+  );
 }
 
 export const AtomsDevtoolProvider = ({

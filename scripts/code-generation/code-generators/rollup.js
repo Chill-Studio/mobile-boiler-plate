@@ -39,6 +39,9 @@ async function rollup(path, fileNameList) {
     }
   });
   let rollupAsString = rollupPaths.join("\r\n");
+  if (!rollupAsString) {
+    rollupAsString = "export {};"
+  }
   write.sync(`${path}/index.ts`, rollupAsString, {
     newline: true,
   });

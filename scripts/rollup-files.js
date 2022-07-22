@@ -6,7 +6,6 @@ function generateAutoExports() {
     rollup("./src/components", ["component"]),
     rollup("./src/pages", ["page"]),
     rollup("./src/utils", ["utils"]),
-    rollup("./src/locales/en", ["ts"]),
     rollup("./src/store", ["slice", "selector", "atom"]),
   ]);
 }
