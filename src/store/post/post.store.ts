@@ -10,13 +10,13 @@ export const usePost = () => {
       JSON.stringify(post.value, null, 2)
     );
   return {
+    post: post,
     /* SAGAS */
-    set: (_some: any) => post.set(_some),
-    asyncAction: async () => {
-      const response = await (await fetch("")).json;
-      post.set(response);
+    someAsyncAction: async () => {
+      // const response = await (await fetch("")).json;
+      post.title.set("response async");
     },
     /* SELECTORS */
-    get: () => post.get(),
+    someGet: () => post.get().content.toLocaleLowerCase(),
   };
 };
