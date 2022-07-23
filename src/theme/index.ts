@@ -2,6 +2,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { extendTheme } from "native-base";
 
 export const theme = extendTheme({
+  // I don't know why but the font config does not work
+
   useSystemColorMode: false,
   initialColorMode: "dark",
   dependencies: {
@@ -44,6 +46,9 @@ export const theme = extendTheme({
     mono: "EduSABeginner",
   },
 });
+
+let fontKey = Object.keys(theme.fontConfig)[0];
+export { fontKey };
 
 type MyThemeType = typeof theme;
 declare module "native-base" {

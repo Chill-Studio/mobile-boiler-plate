@@ -60,3 +60,19 @@ Add your slice name to in App.js
 
 ## Fonts 
 
+- add them  in App.tsx
+- Replace the theme.fontConfig
+- Use them with <T> component
+- Add the 
+```jsx
+<T fontSize={"4xl"} fontWeight={900}>
+  Heading
+</T>
+
+<T fontWeight={400}>
+  Hello
+</T>
+<T>
+  Hello
+</T>
+```

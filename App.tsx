@@ -25,10 +25,10 @@ const App = () => {
     try {
       await Font.loadAsync({
         //EduSABeginner
+        "EduSABeginner-SemiBold": require("./src/assets/fonts/EduSABeginner-SemiBold.ttf"),
         "EduSABeginner-Bold": require("./src/assets/fonts/EduSABeginner-Bold.ttf"),
         "EduSABeginner-Medium": require("./src/assets/fonts/EduSABeginner-Medium.ttf"),
         "EduSABeginner-Regular": require("./src/assets/fonts/EduSABeginner-Regular.ttf"),
-        "EduSABeginner-SemiBold": require("./src/assets/fonts/EduSABeginner-SemiBold.ttf"),
       });
       setAppIsReady(true);
     } catch (e) {

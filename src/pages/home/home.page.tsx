@@ -3,28 +3,16 @@ import { Text, Heading, HStack, Image, Button } from "native-base";
 import { ContainerPage } from "../../components/container-page/container-page.component";
 import { useTranslation } from "react-i18next";
 import { usePost } from "@store";
+import { T } from "@components";
 
 export function HomePage() {
   const { t } = useTranslation("common");
   const { post, someAsyncAction } = usePost();
   const header = (
     <>
-      <Text
-        fontFamily="heading"
-        fontSize={"4xl"}
-        fontWeight={600}
-        color="white"
-      >
-        He it is NOT working
-      </Text>
-      <Text
-        fontFamily="EduSABeginner-SemiBold"
-        fontSize={"4xl"}
-        fontWeight={600}
-        color="white"
-      >
-        But here it is working
-      </Text>
+      <T fontSize={"4xl"} fontWeight={900}>
+        Heading
+      </T>
     </>
   );
   return <ContainerPage h="full">{header}</ContainerPage>;
