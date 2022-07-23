@@ -53,7 +53,6 @@ const App = () => {
   if (!appIsReady) {
     return null;
   }
-  // @ts-ignore
   return (
     <NativeBaseProvider config={theme}>
       {/*// @ts-ignore */}
