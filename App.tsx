@@ -53,8 +53,10 @@ const App = () => {
   if (!appIsReady) {
     return null;
   }
+  // @ts-ignore
   return (
     <NativeBaseProvider config={theme}>
+      {/*// @ts-ignore */}
       <View onLayout={hideSplashOnAppReady}>
         <I18nextProvider i18n={i18n}>
           <NativeRouter>
