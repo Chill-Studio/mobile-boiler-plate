@@ -1,5 +1,14 @@
 import React from "react";
-import { Text, Heading, HStack, Image, Button } from "native-base";
+import {
+  Text,
+  Heading,
+  HStack,
+  Image,
+  Button,
+  Box,
+  Flex,
+  Center,
+} from "native-base";
 import { ContainerPage } from "../../components/container-page/container-page.component";
 import { useTranslation } from "react-i18next";
 import { usePost } from "@store";
@@ -11,11 +20,23 @@ export function HomePage() {
   const header = (
     <>
       <T fontSize={"4xl"} fontWeight={900}>
-        Heading
+        Hello, here is a preloaded image
       </T>
     </>
   );
-  return <ContainerPage h="full">{header}</ContainerPage>;
+  return (
+    <Center h="full">
+      {header}
+      <Image
+        h={120}
+        w={"100%"}
+        source={{
+          uri: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+        }}
+        alt={"Preloaded image"}
+      />
+    </Center>
+  );
 }
 
 /*<Text fontWeight={"semibold"} fontSize={"lg"} color={"white"}>
