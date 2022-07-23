@@ -7,7 +7,7 @@ export const allEnvConfig: EnvConfiguration = {
 export const devConfig: EnvConfiguration = {
   ...allEnvConfig,
   hideYellowLogs: false,
-  sandboxMode: true,
+  sandboxMode: false,
   debugStore: {
     post: false,
   },

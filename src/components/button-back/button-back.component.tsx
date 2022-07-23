@@ -3,7 +3,10 @@ import { Icon, IconButton } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigate } from "react-router-native";
 
-export function ButtonBack(p: { onPress?: () => void }) {
+interface Props {
+  onPress?: () => void;
+}
+export function ButtonBack(p: Props) {
   const nav = useNavigate();
   return (
     <IconButton

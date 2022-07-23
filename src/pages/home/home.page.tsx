@@ -9,15 +9,31 @@ export function HomePage() {
   const { post, someAsyncAction } = usePost();
   const header = (
     <>
-      <Heading color={"white"}>{t("title")}</Heading>
-      <Text fontWeight={"semibold"} fontSize={"lg"} color={"white"}>
+      <Text
+        fontFamily="heading"
+        fontSize={"4xl"}
+        fontWeight={600}
+        color="white"
+      >
+        He it is NOT working
+      </Text>
+      <Text
+        fontFamily="EduSABeginner-SemiBold"
+        fontSize={"4xl"}
+        fontWeight={600}
+        color="white"
+      >
+        But here it is working
+      </Text>
+    </>
+  );
+  return <ContainerPage h="full">{header}</ContainerPage>;
+}
+
+/*<Text fontWeight={"semibold"} fontSize={"lg"} color={"white"}>
         React native boiler plate with
       </Text>
       <HStack>{<Text color={"white"}>{post.get().title}</Text>}</HStack>
       <Button onPress={() => post.title.set("eazeeae")}></Button>
       <Button onPress={someAsyncAction}></Button>
-    </>
-  );
-
-  return <ContainerPage h="full">{header}</ContainerPage>;
-}
+      */
