@@ -13,7 +13,9 @@ import useAsyncEffect from "use-async-effect";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { Asset } from "expo-asset";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
+// Will create the store without having to make a call
+import "./src/store/root/root.store";
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 //LogBox.ignoreLogs(["Require cycle:"]);
 LogBox.ignoreLogs(["Require cycle"]);
@@ -27,18 +29,27 @@ const App = () => {
   useAsyncEffect(async function loadAssets() {
     try {
       const loadFontsPromise = Font.loadAsync({
-        //EduSABeginner
+        //Text fonts
         "EduSABeginner-SemiBold": require("./src/assets/fonts/EduSABeginner-SemiBold.ttf"),
         "EduSABeginner-Bold": require("./src/assets/fonts/EduSABeginner-Bold.ttf"),
         "EduSABeginner-Medium": require("./src/assets/fonts/EduSABeginner-Medium.ttf"),
         "EduSABeginner-Regular": require("./src/assets/fonts/EduSABeginner-Regular.ttf"),
+        // Custom icons from icoMoon (require a .json and a ttf in assets)
+        IcoMoon: require("./src/assets/icomoon/icomoon.ttf"),
       });
+      // Vector icons
+      const loadIconsPromise = [Ionicons.loadFont];
+      //Images
       const loadImagesPromise = cacheImages([
         "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
         require("./src/assets/images/adaptive-icon.png"),
       ]);
 
-      await Promise.all([loadFontsPromise, loadImagesPromise]);
+      await Promise.all([
+        loadFontsPromise,
+        loadImagesPromise,
+        ...loadIconsPromise,
+      ]);
       setAppIsReady(true);
     } catch (e) {
       console.warn("Failure during asset loading", e);

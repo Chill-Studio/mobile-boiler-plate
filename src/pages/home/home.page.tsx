@@ -16,6 +16,14 @@ import { usePost } from "@store";
 import { T } from "@components";
 //@ts-ignore
 import ExpoFastImage from "expo-fast-image";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { createIconSetFromIcoMoon } from "@expo/vector-icons";
+
+const CustomIcomoonIcons = createIconSetFromIcoMoon(
+  require("../../assets/icomoon/selection.json"),
+  "IcoMoon",
+  "icomoon.ttf"
+);
 
 export function HomePage() {
   const { t } = useTranslation("common");
@@ -58,6 +66,14 @@ export function HomePage() {
         uri="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
       />
       {hookStateDemo}
+      <T fontSize="xl" fontWeight={500} color={"white"}>
+        A simple icon
+      </T>
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
+      <T fontSize="xl" fontWeight={500} color={"white"}>
+        A custom icon
+      </T>
+      <CustomIcomoonIcons name="nativebase-logo" size={50} color="red" />
     </ContainerPage>
   );
 }

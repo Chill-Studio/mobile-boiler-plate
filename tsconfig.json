@@ -4,20 +4,41 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@pages": ["pages/index.ts"],
-      "@components": ["components/index.ts"],
-      "@routes": ["routes/index.ts"],
-      "@configs": ["configs/index.ts"],
-      "@utils": ["utils/index.ts"],
-      "@theme": ["theme/index.ts"],
-      "@typings": ["typings/index.ts"],
-      "@store": ["store/index.ts"]
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@pages": [
+        "pages/index.ts"
+      ],
+      "@components": [
+        "components/index.ts"
+      ],
+      "@routes": [
+        "routes/index.ts"
+      ],
+      "@configs": [
+        "configs/index.ts"
+      ],
+      "@utils": [
+        "utils/index.ts"
+      ],
+      "@theme": [
+        "theme/index.ts"
+      ],
+      "@typings": [
+        "typings/index.ts"
+      ],
+      "@store": [
+        "store/index.ts"
+      ]
     },
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-native",
-    "lib": ["DOM", "ESNext"],
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
@@ -25,11 +46,15 @@
     "target": "ESNext",
     "strict": true
   },
-  "include": ["./**/*.ts", "./**/*.tsx"],
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx"
+  ],
   "exclude": [
     "node_modules",
     "babel.config.js",
     "metro.config.js",
     "jest.config.js"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

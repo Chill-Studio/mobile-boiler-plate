@@ -1,5 +1,6 @@
 {
   "expo": {
+
     "plugins":[],
     "name": "mobile-boiler-plate",
     "slug": "mobile-boiler-plate",
@@ -15,7 +16,7 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "./src/assets/images"
     ],
     "ios": {
       "supportsTablet": true
