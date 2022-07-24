@@ -44,7 +44,7 @@ You can add templates src/script/code-generation/templates
 
 Suffix the name of you objet with `_<lng>`
 
-```
+```js
 export const common_en = {
     "title": "Hello"
 }
@@ -58,7 +58,7 @@ Add your slice name to in App.js
   useAtomDevtools(projectAtom, "project");
 ```
 
-## Fonts 
+## Fonts
 
 - add them  in App.tsx
 - Replace the theme.fontConfig
@@ -75,4 +75,26 @@ Add your slice name to in App.js
 <T>
   Hello
 </T>
+```
+
+ 
+ ## Icons
+
+ For vector icons from @Expo just preload them in App.tsx
+
+ For custom icons, go on Icomoon, create a set with some svg and then at the bottom download font.
+ You need the selection.json and the ttf.
+ Add them to src/assets/icomoon and then preload them in the App.tsx
+ To use them : 
+
+ ```js
+const CustomIcon = createIconSetFromIcoMoon(
+  require("../../assets/icomoon/selection.json"),
+  "IcoMoon",
+  "icomoon.ttf"
+);
+```
+
+```jsx
+<CustomIcomoonIcons name="nativebase-logo" size={50} color="red" />
 ```

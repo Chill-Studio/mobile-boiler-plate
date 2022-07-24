@@ -55,6 +55,19 @@ export function HomePage() {
       </VStack>
     </>
   );
+
+  const iconsDemo = (
+    <>
+      <T fontSize="xl" fontWeight={500} color={"white"}>
+        A simple icon
+      </T>
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
+      <T fontSize="xl" fontWeight={500} color={"white"}>
+        A custom icon
+      </T>
+      <CustomIcomoonIcons name="nativebase-logo" size={50} color="red" />
+    </>
+  );
   return (
     <ContainerPage h="full">
       {header}
@@ -66,22 +79,7 @@ export function HomePage() {
         uri="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
       />
       {hookStateDemo}
-      <T fontSize="xl" fontWeight={500} color={"white"}>
-        A simple icon
-      </T>
-      <Ionicons name="md-checkmark-circle" size={32} color="green" />
-      <T fontSize="xl" fontWeight={500} color={"white"}>
-        A custom icon
-      </T>
-      <CustomIcomoonIcons name="nativebase-logo" size={50} color="red" />
+      {iconsDemo}
     </ContainerPage>
   );
 }
-
-/*<Text fontWeight={"semibold"} fontSize={"lg"} color={"white"}>
-        React native boiler plate with
-      </Text>
-      <HStack>{<Text color={"white"}>{post.get().title}</Text>}</HStack>
-      <Button onPress={() => post.title.set("eazeeae")}></Button>
-      <Button onPress={someAsyncAction}></Button>
-      */

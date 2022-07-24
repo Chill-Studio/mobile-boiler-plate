@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PresenceTransition } from "native-base";
-import { useEffect, useState } from "react";
 
 const ANIM_DURATION = 1000;
 

@@ -16,9 +16,8 @@ import { Asset } from "expo-asset";
 import Ionicons from "@expo/vector-icons/Ionicons";
 // Will create the store without having to make a call
 import "./src/store/root/root.store";
+
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
-//LogBox.ignoreLogs(["Require cycle:"]);
-LogBox.ignoreLogs(["Require cycle"]);
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();

@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonBack } from "@components";
+import { ButtonBack } from "../button-back/button-back.component";
 import { HStack, Box, Heading } from "native-base";
 import { ColorType } from "native-base/lib/typescript/components/types";
 
