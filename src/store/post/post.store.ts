@@ -14,7 +14,7 @@ export const usePost = () => {
     /* SAGAS */
     someAsyncAction: async () => {
       // const response = await (await fetch("")).json;
-      post.title.set("response async");
+      post.title.set("This was set from a saga");
     },
     /* SELECTORS */
     someGet: () => post.get().content.toLocaleLowerCase(),
