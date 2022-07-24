@@ -12,9 +12,9 @@ export const usePost = () => {
   return {
     post: post,
     /* SAGAS */
-    someAsyncAction: async () => {
+    someAsyncAction: async (title: string) => {
       // const response = await (await fetch("")).json;
-      post.title.set("This was set from a saga");
+      post.title.set(title);
     },
     /* SELECTORS */
     someGet: () => post.get().content.toLocaleLowerCase(),

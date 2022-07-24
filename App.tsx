@@ -16,6 +16,7 @@ import { Asset } from "expo-asset";
 import Ionicons from "@expo/vector-icons/Ionicons";
 // Will create the store without having to make a call
 import "./src/store/root/root.store";
+import { usePost } from "@store";
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 
@@ -24,7 +25,14 @@ SplashScreen.preventAutoHideAsync();
 
 const App = () => {
   const [appIsReady, setAppIsReady] = useState(false);
+  const { someAsyncAction } = usePost();
 
+  // Load in the store the data required to start the app.
+  useAsyncEffect(async function loadData() {
+    someAsyncAction("This was set during app initialization");
+  }, []);
+
+  // Cache fonts,icons and images before the app start.
   useAsyncEffect(async function loadAssets() {
     try {
       const loadFontsPromise = Font.loadAsync({

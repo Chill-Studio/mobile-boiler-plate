@@ -45,11 +45,18 @@ export function HomePage() {
 
         <Button
           size="md"
-          onPress={() => post.title.set("This was set from the component")}
+          onPress={() =>
+            post.title.set("This was set from the component from a setter")
+          }
         >
           Set from component
         </Button>
-        <Button size="md" onPress={someAsyncAction}>
+        <Button
+          size="md"
+          onPress={() =>
+            someAsyncAction("This was set from a component using a saga")
+          }
+        >
           Set from a saga
         </Button>
       </VStack>
