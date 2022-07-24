@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { NativeBaseProvider } from "native-base";
-import { LogBox, View, Image } from "react-native";
+import { View, Image } from "react-native";
 import { NativeRouter, Routes, Route } from "react-router-native";
 import { ROUTES } from "@routes";
 import { HomePage } from "@pages";
