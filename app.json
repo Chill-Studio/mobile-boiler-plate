@@ -1,7 +1,6 @@
 {
   "expo": {
-
-    "plugins":[],
+    "plugins": ["expo-localization"],
     "name": "mobile-boiler-plate",
     "slug": "mobile-boiler-plate",
     "version": "1.0.0",
@@ -15,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "./src/assets/images"
-    ],
+    "assetBundlePatterns": ["./src/assets/images"],
     "ios": {
       "supportsTablet": true
     },
@@ -30,7 +27,5 @@
     "web": {
       "favicon": "./src/assets/images/favicon.png"
     }
-    
   }
-  
 }

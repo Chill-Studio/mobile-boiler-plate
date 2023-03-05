@@ -1,4 +1,4 @@
-import { ExpoConfig, ConfigContext } from "@expo/config";
+import { ConfigContext, ExpoConfig } from "@expo/config";
 
 export const allEnvConfig: EnvConfiguration = {
   supportedLanguages: ["en", "fr"],
@@ -8,9 +8,6 @@ export const devConfig: EnvConfiguration = {
   ...allEnvConfig,
   hideYellowLogs: false,
   sandboxMode: false,
-  debugStore: {
-    post: false,
-  },
 };
 
 export const prodConfig: EnvConfiguration = {
@@ -22,9 +19,6 @@ export interface EnvConfiguration {
   hideYellowLogs?: boolean;
   supportedLanguages: string[];
   sandboxMode?: boolean;
-  debugStore?: {
-    post: boolean;
-  };
 }
 
 export default ({ config }: ConfigContext): ExpoConfig => {

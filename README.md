@@ -50,13 +50,7 @@ export const common_en = {
 }
 ```
 
-## Dev tool
 
-Add your slice name to in App.js 
-
-```js
-  useAtomDevtools(projectAtom, "project");
-```
 
 ## Fonts
 
