@@ -15,10 +15,9 @@ import { I18nextProvider } from "react-i18next";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { NativeBaseProvider } from "native-base";
 import { ROUTES } from "@routes";
-import { SandboxPage } from "./src/pages/sandbox/sandbox.page";
+import { SandboxPage } from "./src/pages/Sandbox/Sandbox.page";
 import { config } from "@configs";
 import { i18n } from "./i18n.utils";
-import { theme } from "@theme";
 import { useAsyncEffect } from "use-async-effect";
 import { usePost } from "@store";
 

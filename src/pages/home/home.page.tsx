@@ -12,7 +12,7 @@ import {
 import { Dimensions, StyleSheet, Text } from "react-native";
 import { ResponsiveStyleSheet, r, v } from "@utils";
 
-import { ContainerPage } from "../../components/container-page/container-page.component";
+import { ContainerPage } from "../../components/ContainerPage/ContainerPage.component";
 import ExpoFastImage from "expo-fast-image";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React from "react";

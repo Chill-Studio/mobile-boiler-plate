@@ -1,4 +1,3 @@
-export * from "./home/home.page"
-export * from "./home/home.page"
-export * from "./sandbox/sandbox.page"
-export * from "./sandbox/sandbox.page"
+export * from "./Home/Home.page"
+export * from "./Sandbox/Sandbox.page"
+export * from "./Sandbox/Sandbox.page"

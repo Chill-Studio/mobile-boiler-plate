@@ -1,5 +1,4 @@
 import { Text, TextProps } from "react-native";
-import { fontKey, theme } from "@theme";
 
 import { useTranslation } from "react-i18next";
 
