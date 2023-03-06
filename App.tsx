@@ -95,7 +95,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView onLayout={hideSplashOnAppReady} style={{ flex: 1 }}>
-        <NativeBaseProvider config={theme}>
+        <NativeBaseProvider>
           <I18nextProvider i18n={i18n}>
             <NativeRouter>
               <Routes>

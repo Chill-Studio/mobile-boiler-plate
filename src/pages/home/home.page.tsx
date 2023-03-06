@@ -126,7 +126,7 @@ export function HomePage() {
       {renderGrid()}
       <View>
         <View style={rs.box}>
-          <Text style={rs.txt}>Stylesheet</Text>
+          <T style={rs.txt}>Stylesheet</T>
           <View style={rs.box2} />
         </View>
         <View style={{ marginTop: v(50) }} />
@@ -138,21 +138,6 @@ export function HomePage() {
     </View>
   );
 }
-
-/*
-
-<View>
-          <View style={s.box}>
-            <Text style={s.txt}>Stylesheet</Text>
-            <View style={s.box2} />
-          </View>
-          <View style={rs.box}>
-            <Text style={rs.txt}>Stylesheet</Text>
-            <View style={rs.box2} />
-          </View>
-        </View>
-
-      */
 
 const rs = ResponsiveStyleSheet.create({
   box: {

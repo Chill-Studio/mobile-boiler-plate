@@ -1,23 +1,15 @@
-import { IHeadingProps, ITextProps, Text } from "native-base";
+import { Text, TextProps } from "react-native";
 import { fontKey, theme } from "@theme";
 
-import { R } from "@utils";
 import { useTranslation } from "react-i18next";
 
-export interface Props extends ITextProps {
+export interface Props extends TextProps {
   id?: string;
-  fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 }
 
-export function T(p: Props & IHeadingProps) {
+export function T(p: Props & TextProps) {
   const { t } = useTranslation();
-  const { id, fontWeight, ...otherProps } = p;
+  const { id, ...otherProps } = p;
   const text = id ? t(id) : p.children;
-  const fontFamily =
-    theme.fontConfig[fontKey][(p.fontWeight as number) || 300].normal;
-  return (
-    <Text fontFamily={fontFamily} {...otherProps}>
-      {text}
-    </Text>
-  );
+  return <Text {...otherProps}>{text}</Text>;
 }

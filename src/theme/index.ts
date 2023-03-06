@@ -1,56 +1,66 @@
-import { LinearGradient } from "expo-linear-gradient";
-import { extendTheme } from "native-base";
+import { h } from "@utils";
 
-export const theme = extendTheme({
-  // I don't know why but the font config does not work
+const COLORS = {
+  white_100: "white",
+  black_100: "black",
+};
 
-  useSystemColorMode: false,
-  initialColorMode: "dark",
-  dependencies: {
-    "linear-gradient": LinearGradient,
-  },
-  fontConfig: {
-    EduSABeginner: {
-      100: {
-        normal: "EduSABeginner-Regular",
-      },
-      200: {
-        normal: "EduSABeginner-Regular",
-      },
-      300: {
-        normal: "EduSABeginner-Regular",
-      },
-      400: {
-        normal: "EduSABeginner-Medium",
-      },
-      500: {
-        normal: "EduSABeginner-Medium",
-      },
-      600: {
-        normal: "EduSABeginner-Medium",
-      },
-      700: {
-        normal: "EduSABeginner-SemiBold",
-      },
-      800: {
-        normal: "EduSABeginner-SemiBold",
-      },
-      900: {
-        normal: "EduSABeginner-Bold",
-      },
+const SHADOWS = {
+  s: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
     },
-  },
-  fonts: {
-    heading: "EduSABeginner",
-    body: "EduSABeginner",
-    mono: "EduSABeginner",
-  },
-});
+    shadowOpacity: 0.18,
+    shadowRadius: 1.0,
 
-let fontKey = Object.keys(theme.fontConfig)[0];
-export { fontKey };
+    elevation: 1,
+  },
+  m: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
 
-type MyThemeType = typeof theme;
-declare module "native-base" {
-  interface ICustomTheme extends MyThemeType {}
-}
+    elevation: 3,
+  },
+  l: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
+  },
+};
+
+const TYPOGRAPHY = {
+  h1: {
+    fontFamily: "EduSABeginner-Regular",
+    fontWeight: 700,
+    fontSize: h(60),
+  },
+  h2: {
+    fontFamily: "EduSABeginner-Regular",
+    fontWeight: 600,
+    fontSize: h(50),
+  },
+  h3: {
+    fontFamily: "EduSABeginner-Regular",
+    fontWeight: 500,
+    fontSize: h(30),
+  },
+  p: {
+    fontFamily: "EduSABeginner-Regular",
+    fontWeight: 500,
+    fontSize: h(30),
+  },
+};
+
+export { TYPOGRAPHY, SHADOWS, COLORS };
