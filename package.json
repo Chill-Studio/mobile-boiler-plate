@@ -1,15 +1,12 @@
 {
   "scripts": {
-    "dev": "yarn setup && expo start --clear",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19000'",
     "test": "jest",
     "test:watch": "yarn test --watch",
-    "g": "node ./scripts/generate-code.js",
-    "setup": "node ./scripts/setup.js",
-    "start": "yarn debug && yarn setup && expo start",
-    "android": "yarn setup && expo start --android",
-    "ios": "yarn setup && expo start --ios",
-    "web": "yarn setup && expo start --web",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
     "eject": "expo eject"
   },
   "dependencies": {
