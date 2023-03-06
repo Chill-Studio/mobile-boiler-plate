@@ -1,6 +1,9 @@
-import { useTranslation } from "react-i18next";
-import { IHeadingProps, Text, ITextProps } from "native-base";
+import { IHeadingProps, ITextProps, Text } from "native-base";
 import { fontKey, theme } from "@theme";
+
+import { R } from "@utils";
+import { useTranslation } from "react-i18next";
+
 export interface Props extends ITextProps {
   id?: string;
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;

@@ -1,21 +1,25 @@
-import React, { useCallback, useState } from "react";
-import { NativeBaseProvider } from "native-base";
-import { View, Image } from "react-native";
-import { NativeRouter, Routes, Route } from "react-router-native";
-import { ROUTES } from "@routes";
-import { HomePage } from "@pages";
-import { theme } from "@theme";
-import { config } from "@configs";
-import { i18n } from "./i18n.utils";
-import { I18nextProvider } from "react-i18next";
-import { SandboxPage } from "./src/pages/sandbox/sandbox.page";
-import useAsyncEffect from "use-async-effect";
-import * as SplashScreen from "expo-splash-screen";
-import * as Font from "expo-font";
-import { Asset } from "expo-asset";
-import Ionicons from "@expo/vector-icons/Ionicons";
 // Will create the store without having to make a call
 import "./src/store/root/root.store";
+
+import * as Font from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+
+import { Image, View } from "react-native";
+import { NativeRouter, Route, Routes } from "react-router-native";
+import React, { useCallback, useState } from "react";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+
+import { Asset } from "expo-asset";
+import { HomePage } from "@pages";
+import { I18nextProvider } from "react-i18next";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { NativeBaseProvider } from "native-base";
+import { ROUTES } from "@routes";
+import { SandboxPage } from "./src/pages/sandbox/sandbox.page";
+import { config } from "@configs";
+import { i18n } from "./i18n.utils";
+import { theme } from "@theme";
+import { useAsyncEffect } from "use-async-effect";
 import { usePost } from "@store";
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
@@ -89,21 +93,22 @@ const App = () => {
   }
 
   return (
-    <NativeBaseProvider config={theme}>
-      {/*// @ts-ignore */}
-      <View onLayout={hideSplashOnAppReady}>
-        <I18nextProvider i18n={i18n}>
-          <NativeRouter>
-            <Routes>
-              <Route
-                path={ROUTES.HOME}
-                element={config.sandboxMode ? <SandboxPage /> : <HomePage />}
-              />
-            </Routes>
-          </NativeRouter>
-        </I18nextProvider>
-      </View>
-    </NativeBaseProvider>
+    <SafeAreaProvider>
+      <SafeAreaView onLayout={hideSplashOnAppReady} style={{ flex: 1 }}>
+        <NativeBaseProvider config={theme}>
+          <I18nextProvider i18n={i18n}>
+            <NativeRouter>
+              <Routes>
+                <Route
+                  path={ROUTES.HOME}
+                  element={config.sandboxMode ? <SandboxPage /> : <HomePage />}
+                />
+              </Routes>
+            </NativeRouter>
+          </I18nextProvider>
+        </NativeBaseProvider>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
