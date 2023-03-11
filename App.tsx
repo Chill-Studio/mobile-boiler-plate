@@ -1,10 +1,11 @@
 // Will create the store without having to make a call
 import "./src/store/root/root.store";
+import {} from "react-native";
 
 import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-import { Image, View } from "react-native";
+import { Image, LogBox } from "react-native";
 import { NativeRouter, Route, Routes } from "react-router-native";
 import React, { useCallback, useState } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -14,12 +15,19 @@ import { HomePage } from "@pages";
 import { I18nextProvider } from "react-i18next";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { NativeBaseProvider } from "native-base";
+import { PreProcessResponsiveStyle } from "@utils";
 import { ROUTES } from "@routes";
 import { SandboxPage } from "./src/pages/Sandbox/Sandbox.page";
 import { config } from "@configs";
 import { i18n } from "./i18n.utils";
 import { useAsyncEffect } from "use-async-effect";
 import { usePost } from "@store";
+
+if (config.useResponsiveStylesheets) {
+  LogBox.ignoreAllLogs(true);
+  PreProcessResponsiveStyle();
+  LogBox.ignoreAllLogs(false);
+}
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
 
@@ -62,6 +70,7 @@ const App = () => {
       ]);
       setAppIsReady(true);
     } catch (e) {
+      r;
       console.warn("Failure during asset loading", e);
     }
   }, []);

@@ -2,6 +2,7 @@ import { ConfigContext, ExpoConfig } from "@expo/config";
 
 export const allEnvConfig: EnvConfiguration = {
   supportedLanguages: ["en", "fr"],
+  useResponsiveStylesheets: true,
 };
 
 export const devConfig: EnvConfiguration = {
@@ -19,6 +20,7 @@ export interface EnvConfiguration {
   hideYellowLogs?: boolean;
   supportedLanguages: string[];
   sandboxMode?: boolean;
+  useResponsiveStylesheets: boolean;
 }
 
 export default ({ config }: ConfigContext): ExpoConfig => {

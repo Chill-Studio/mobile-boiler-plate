@@ -4,22 +4,31 @@ import { ImageStyle, TextStyle } from "react-native";
 const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 812;
 
+const HEIGHT = Dimensions.get("window").height;
+const WIDTH = Dimensions.get("window").width;
+
 export const h = (size: number) => {
-  return (Dimensions.get("window").width * size) / guidelineBaseWidth;
+  return (WIDTH * size) / guidelineBaseWidth;
 };
 
 export const v = (size: number) => {
-  return (Dimensions.get("window").height * size) / guidelineBaseHeight;
+  return (HEIGHT * size) / guidelineBaseHeight;
+};
+
+export const marginPaddingResponsive = (size: number) => {
+  return (HEIGHT * size) / guidelineBaseHeight;
 };
 const r = {
   v,
   h,
 };
 
-const MATRIX: any = {
+const MATRIX_CSS_RULES: any = {
   top: v,
   bottom: v,
   height: v,
+  margin: v,
+  padding: v,
   marginTop: v,
   marginBottom: v,
   marginVertical: v,
@@ -41,7 +50,7 @@ const MATRIX: any = {
   borderWidth: h,
 };
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
-
+/* 
 class ResponsiveStyleSheet {
   static create<T extends NamedStyles<T> | NamedStyles<any>>(
     style: T | NamedStyles<T>
@@ -50,9 +59,9 @@ class ResponsiveStyleSheet {
       for (const cssRuleName in style[className]) {
         if (
           typeof style[className][cssRuleName] === "number" &&
-          MATRIX[cssRuleName] !== undefined
+          MATRIX_CSS_RULES[cssRuleName] !== undefined
         ) {
-          style[className][cssRuleName] = MATRIX[cssRuleName](
+          style[className][cssRuleName] = MATRIX_CSS_RULES[cssRuleName](
             style[className][cssRuleName]
           );
         }
@@ -60,5 +69,24 @@ class ResponsiveStyleSheet {
     }
     return StyleSheet.create(style);
   }
+} */
+
+// Make all stylesheet responsive by applying
+function PreProcessResponsiveStyle() {
+  console.info(
+    "Responsive stylesheets enabled, to disable set useResponsiveStylesheets to false in config."
+  );
+  for (const cssRuleName in MATRIX_CSS_RULES) {
+    StyleSheet.setStyleAttributePreprocessor(cssRuleName, (value) => {
+      if (
+        typeof value === "number" &&
+        MATRIX_CSS_RULES[cssRuleName] !== undefined
+      ) {
+        return MATRIX_CSS_RULES[cssRuleName](value);
+      } else {
+        return value;
+      }
+    });
+  }
 }
-export { r, ResponsiveStyleSheet };
+export { r, PreProcessResponsiveStyle };
