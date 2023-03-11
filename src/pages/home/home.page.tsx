@@ -10,7 +10,6 @@ import {
   View,
 } from "native-base";
 import { Dimensions, StyleSheet, Text } from "react-native";
-import { PreprocessStyleResponsive, ResponsiveStyleSheet, r, v } from "@utils";
 
 import { ContainerPage } from "../../components/ContainerPage/ContainerPage.component";
 import ExpoFastImage from "expo-fast-image";
@@ -110,7 +109,7 @@ export function HomePage() {
         />
         <View
           style={{
-            top: Dimensions.get("window").height / 2 - 2.5,
+            top: "50%",
             position: "absolute",
             height: 5,
             width: 1000,
@@ -125,9 +124,9 @@ export function HomePage() {
     <View style={{ flex: 1 }}>
       {renderGrid()}
       <View>
-        <View style={s.box}>
-          <T style={s.txt}>Stylesheet</T>
-          <View style={s.box2} />
+        <View style={rs.box}>
+          <T style={rs.txt}>Stylesheet</T>
+          <View style={rs.box2} />
         </View>
         <View style={rs.box}>
           <T style={rs.txt}>Stylesheet</T>
@@ -153,29 +152,31 @@ const s = StyleSheet.create({
     fontFamily: "EduSABeginner-Regular",
   },
   box2: {
-    margin: 20,
     paddingVertical: 80,
     backgroundColor: "red",
+    fontSize: 16,
   },
 });
 
 const rs = StyleSheet.create({
   box: {
+    margin: 400,
     marginLeft: 100,
     paddingTop: 40,
     width: 249,
     height: 249,
     backgroundColor: "black",
+    marginBottom: 20,
   },
   txt: {
+    padding: 200,
     color: "white",
     fontSize: 30,
     fontFamily: "EduSABeginner-Regular",
   },
   box2: {
-    margin: 20,
     paddingVertical: 80,
     backgroundColor: "red",
-    marginBottom: 20,
+    fontSize: 16,
   },
 });

@@ -1,6 +1,5 @@
 // Will create the store without having to make a call
 import "./src/store/root/root.store";
-import {} from "react-native";
 
 import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -24,9 +23,8 @@ import { useAsyncEffect } from "use-async-effect";
 import { usePost } from "@store";
 
 if (config.useResponsiveStylesheets) {
-  LogBox.ignoreAllLogs(true);
+  LogBox.ignoreLogs(["Overwriting"]);
   PreProcessResponsiveStyle();
-  LogBox.ignoreAllLogs(false);
 }
 
 // config.hideYellowLogs && LogBox.ignoreAllLogs();
@@ -40,7 +38,9 @@ const App = () => {
 
   // Load in the store the data required to start the app.
   useAsyncEffect(async function loadData() {
-    someAsyncAction("This was set during app initialization");
+    setTimeout(() => {
+      someAsyncAction("This was set during app initialization");
+    }, 4000);
   }, []);
 
   // Cache fonts,icons and images before the app start.
@@ -70,7 +70,6 @@ const App = () => {
       ]);
       setAppIsReady(true);
     } catch (e) {
-      r;
       console.warn("Failure during asset loading", e);
     }
   }, []);
