@@ -1,5 +1,3 @@
-import { h } from "@utils";
-
 const COLORS = {
   white_100: "white",
   black_100: "black",
@@ -44,22 +42,22 @@ const TYPOGRAPHY = {
   h1: {
     fontFamily: "EduSABeginner-Regular",
     fontWeight: 700,
-    fontSize: h(60),
+    fontSize: 60,
   },
   h2: {
     fontFamily: "EduSABeginner-Regular",
     fontWeight: 600,
-    fontSize: h(50),
+    fontSize: 50,
   },
   h3: {
     fontFamily: "EduSABeginner-Regular",
     fontWeight: 500,
-    fontSize: h(30),
+    fontSize: 30,
   },
   p: {
     fontFamily: "EduSABeginner-Regular",
     fontWeight: 500,
-    fontSize: h(30),
+    fontSize: 30,
   },
 };
 
