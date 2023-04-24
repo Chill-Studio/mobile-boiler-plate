@@ -1,14 +1,16 @@
 import { ConfigContext, ExpoConfig } from "@expo/config";
 
+/////////////////////////////////////////////////////
 export const allEnvConfig: EnvConfiguration = {
   supportedLanguages: ["en", "fr"],
   useResponsiveStylesheets: true,
+  sandboxMode:true
 };
-
+/////////////////////////////////////////////////////
 export const devConfig: EnvConfiguration = {
   ...allEnvConfig,
   hideYellowLogs: false,
-  sandboxMode: false,
+  sandboxMode: true,
 };
 
 export const prodConfig: EnvConfiguration = {
@@ -19,7 +21,7 @@ export const prodConfig: EnvConfiguration = {
 export interface EnvConfiguration {
   hideYellowLogs?: boolean;
   supportedLanguages: string[];
-  sandboxMode?: boolean;
+  sandboxMode: boolean;
   useResponsiveStylesheets: boolean;
 }
 

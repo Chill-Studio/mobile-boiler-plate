@@ -39,25 +39,30 @@ const SHADOWS = {
 };
 
 const TYPOGRAPHY = {
-  h1: {
+  xl: {
     fontFamily: "EduSABeginner-Regular",
     fontWeight: 700,
-    fontSize: 60,
-  },
-  h2: {
-    fontFamily: "EduSABeginner-Regular",
-    fontWeight: 600,
     fontSize: 50,
   },
-  h3: {
+  lg: {
     fontFamily: "EduSABeginner-Regular",
-    fontWeight: 500,
+    fontWeight: 700,
+    fontSize: 40,
+  },
+  m: {
+    fontFamily: "EduSABeginner-Regular",
+    fontWeight: 600,
     fontSize: 30,
   },
-  p: {
+  sm: {
     fontFamily: "EduSABeginner-Regular",
     fontWeight: 500,
-    fontSize: 30,
+    fontSize: 25,
+  },
+  xs: {
+    fontFamily: "EduSABeginner-Regular",
+    fontWeight: 500,
+    fontSize: 20,
   },
 };
 

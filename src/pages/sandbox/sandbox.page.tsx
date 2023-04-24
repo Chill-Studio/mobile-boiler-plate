@@ -1,12 +1,12 @@
-import { ContainerPage } from "@components";
-import { Text } from "native-base";
+import { ContainerPage, T } from "@components";
 
 export function SandboxPage() {
   return (
     <ContainerPage h="full">
-      <Text fontWeight={"semibold"} fontSize={"lg"} color={"white"}>
-        Sandbox
-      </Text>
+      <T type="m" >
+        Sandboxaaaaaaaaaaaaaaaaaaaaa
+      </T>
+      
     </ContainerPage>
   );
 }
