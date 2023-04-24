@@ -59,16 +59,11 @@ export const common_en = {
 - Use them with <T> component
 - Add the 
 ```jsx
-<T fontSize={"4xl"} fontWeight={900}>
+<T type={"lg"}  fontWeight={900}>
   Heading
 </T>
 
-<T fontWeight={400}>
-  Hello
-</T>
-<T>
-  Hello
-</T>
+<T type={"xl"}  fontWeight={900} id="common:hello">
 ```
 
  
